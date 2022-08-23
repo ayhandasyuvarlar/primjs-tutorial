@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="prism.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code highlight</title>
+  </head>
+  <body style="max-width: 800px; margin: 20px auto">
+    <div style="text-align: center;"><h1>Primjs Tutorial</h1></div>
+    <pre style="border-radius: 20px;">
+        <code class="language-js">
+            /* React class component*/
+            class Personel extends React.Component {
+                state = {
+                  name: "Ayhan",
+                  array: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+                };
+                clickHandler = (e) => {
+                  this.setState({
+                      name : 'Software Developer'
+                  })
+                }
+                render() {    
+                  const { name , array } = this.state;
+                  return (
+                    &lt;&gt;
+                        &lt;div&gt;{name} &lt;/div&gt;
+                        &lt;div&gt; style={{ display: "flex" }}
+                            {array.map((arr, idx) => (
+                                <div key={idx}>{arr}</div>
+                             ))}
+                        &lt;/div&gt;
+                        &lt;button&gt; onClick={this.clickHandler}>click meeee &lt;button&gt;
+                    &lt;&gt;
+                  );
+                }
+              }
+              ReactDOM.render(<Personel />, document.getElementById("root"));
+        </code>
+    </pre>
+    <script src="./prism.js"></script>
+  </body>
+</html>
